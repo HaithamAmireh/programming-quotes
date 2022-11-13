@@ -11,7 +11,7 @@ from PIL import Image, ImageDraw, ImageFont
 def image_editer(image, quote_values):
     im = Image.open(str(image))
     # Open an Image
-    resized_im = im.resize((round(im.size[0] * 1), round(im.size[1] * 1)))
+    resized_im = im.resize((round(im.size[0] * 0.5), round(im.size[1] * 0.5)))
 
     # Call draw Method to add 2D graphics in an image
     I1 = ImageDraw.Draw(resized_im)
@@ -44,7 +44,7 @@ def retrieve_images(query):
         "format": "jpg",
         "limit": 1,
         "print_urls": True,
-        "size": "medium",
+        "size": "large",
         "aspect_ratio": "square",
     }
     paths = response.download(arguments)
